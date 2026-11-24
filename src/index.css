@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@custom-variant dark (&:is(.dark, .dark *));
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.04);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.5);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.8);
+}
+
+.modal-backdrop {
+  background-color: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+}
+
+.interviewer-notes-editor ul,
+.interviewer-notes-display ul {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.interviewer-notes-editor ol,
+.interviewer-notes-display ol {
+  list-style-type: decimal;
+  padding-left: 1.25rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.interviewer-notes-editor:empty::before {
+  content: attr(data-placeholder);
+  color: rgb(148 163 184);
+  pointer-events: none;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #modal-view-candidate,
+  #modal-view-candidate * {
+    visibility: visible;
+  }
+  #modal-view-candidate {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    background: white !important;
+    color: black !important;
+    padding: 0 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix TA Tracker — Talent Acquisition \u0026 Candidate Tracking System",
+  "description": "Enterprise Talent Acquisition \u0026 Candidate Tracking System with eTRF management, automated resume parsing, and CEFR communication assessments.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
